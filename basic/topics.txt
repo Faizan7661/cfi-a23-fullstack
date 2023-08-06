@@ -1,0 +1,58 @@
+operators 
+control statements 
+iterative statements
+objects
+functions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22 july 2023
+servers
+client send request server accepts the req and respond
+
+
+200 - ok
+301 - Redirect
+400 -
+401 -
+403 - 
+404 - Not Found
+409 - 
+500 - 
+
+
+
+
+
+
+
+
+server banana seekhre 

@@ -1,0 +1,32 @@
+aaj jo bhi karo bolinge yaha note karunga mai
+
+guess the output hora ab 
+practice set timeout ke questions atleast 50
+diff type of architechture for web server
+imb blogs 1 tier 2 and 3
+what are promises
+stages of promises
+pending resolved and rejected 
+routes mein jo jo hai un sab ko replace karo todo se fecth mein babtaye so and display all those in your console
+alter karo using filter json mein
+request response cycle 
+
+
+friday
+
+promises
+
+fetch the titles which starts with the vowel
+
+
+create a weather cli application with following menu
+
+enter city name
+
+1)shoe temperature (show in both C and F)
+2)show humidity
+3)print date and time in current time zone
+4)get sunrise time
+5)show max and min temperature (show in both c anf following)
+*change city
+exit
