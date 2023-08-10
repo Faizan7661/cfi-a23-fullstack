@@ -1,1 +1,77 @@
-[{"firstName":"Mohammed","lastName":"Faizan","email":"mohammedfaizan7661@gmail.com","password":"$2b$12$xbuX..4jth9AQn0HFN6Dtu688cEHiwgE6l3LjRJpM/7uxBlaIS3F6","mobileNumber":"7661936118","address":"Hyderabad , TS","toDos":[{"taskId":"IyhiGRaEPh9o","taskName":"change hogaya duusri baar","taskDescription":"test karrau andar jaara kya data dusri baar"},{"taskId":"nGSTjHgUsVP3","taskName":"change hogaya","taskDescription":"test karrau andar jaara kya data dusri baar"},{"taskId":"VzW9Bl0A6xnf","taskName":"change hogaya duusri baar","taskDescription":"test karrau andar jaara kya data dusri baar"},{"taskId":"hwCYxkvAPIax","taskName":"number 4","taskDescription":"successfully added number 4"}]},{"firstName":"Mohammed","lastName":"zeeshan","email":"itzmezee007@gmail.com","password":"$2b$12$U0XsxmSvpZnwLvhVc8fOw.avFc2YvwPxmCcpgrq7P5R1Lo7vpfiHK","mobileNumber":"7661936118","address":"Hyderabad , TS","toDos":[{"taskId":"znNu45wJGd5P","taskName":"zeeshan Task 1","taskDescription":"test karrau andar jaara kya data dusri baar"}]},{"firstName":"Mohammed","lastName":"xyz","email":"xyz@gmail.com","password":"$2b$12$m9vYAKsS.mnFvtP6TNdADeqSiRGoS5wYytuQ91p29KIfEMquOpa.O","mobileNumber":"234534343","address":"Hyderabad , TS","toDos":[{"taskId":"UYWRPA5JUvcp","taskName":"number 1","taskDescription":"successfully added number 1"},{"taskId":"2E31ysYZWbbi","taskName":"number 2","taskDescription":"successfully added number 2"},{"taskId":"W4dXTDBxSpH5","taskName":"number 3","taskDescription":"successfully added number 3"},{"taskId":"oiHlInz54YzL","taskName":"number 4","taskDescription":"successfully added number 4"}]}]
+[
+    {
+        "firstName": "Mohammed",
+        "lastName": "Faizan",
+        "email": "mohammedfaizan7661@gmail.com",
+        "password": "$2b$12$xbuX..4jth9AQn0HFN6Dtu688cEHiwgE6l3LjRJpM/7uxBlaIS3F6",
+        "mobileNumber": "7661936118",
+        "address": "Hyderabad , TS",
+        "toDos": [
+            {
+                "taskId": "IyhiGRaEPh9o",
+                "taskName": "change hogaya duusri baar",
+                "taskDescription": "test karrau andar jaara kya data dusri baar"
+            },
+            {
+                "taskId": "nGSTjHgUsVP3",
+                "taskName": "change hogaya",
+                "taskDescription": "test karrau andar jaara kya data dusri baar"
+            },
+            {
+                "taskId": "VzW9Bl0A6xnf",
+                "taskName": "change hogaya duusri baar",
+                "taskDescription": "test karrau andar jaara kya data dusri baar"
+            },
+            {
+                "taskId": "hwCYxkvAPIax",
+                "taskName": "number 4",
+                "taskDescription": "successfully added number 4"
+            }
+        ]
+    },
+    {
+        "firstName": "Mohammed",
+        "lastName": "zeeshan",
+        "email": "itzmezee007@gmail.com",
+        "password": "$2b$12$U0XsxmSvpZnwLvhVc8fOw.avFc2YvwPxmCcpgrq7P5R1Lo7vpfiHK",
+        "mobileNumber": "7661936118",
+        "address": "Hyderabad , TS",
+        "toDos": [
+            {
+                "taskId": "znNu45wJGd5P",
+                "taskName": "zeeshan Task 1",
+                "taskDescription": "test karrau andar jaara kya data dusri baar"
+            }
+        ]
+    },
+    {
+        "firstName": "Mohammed",
+        "lastName": "xyz",
+        "email": "xyz@gmail.com",
+        "password": "$2b$12$m9vYAKsS.mnFvtP6TNdADeqSiRGoS5wYytuQ91p29KIfEMquOpa.O",
+        "mobileNumber": "234534343",
+        "address": "Hyderabad , TS",
+        "toDos": [
+            {
+                "taskId": "UYWRPA5JUvcp",
+                "taskName": "number 1",
+                "taskDescription": "successfully added number 1"
+            },
+            {
+                "taskId": "2E31ysYZWbbi",
+                "taskName": "number 2",
+                "taskDescription": "successfully added number 2"
+            },
+            {
+                "taskId": "W4dXTDBxSpH5",
+                "taskName": "number 3",
+                "taskDescription": "successfully added number 3"
+            },
+            {
+                "taskId": "oiHlInz54YzL",
+                "taskName": "number 4",
+                "taskDescription": "successfully added number 4"
+            }
+        ]
+    }
+]
