@@ -1,8 +1,7 @@
 import express from 'express';
-// import fs from 'fs';
 import fs from 'fs/promises';
 import bcrypt from 'bcrypt';
-
+import jwt from 'jsonwebtoken'
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
@@ -51,7 +50,15 @@ router.post('/login', async (req, res) => {
         if (!matchPassword) {
             return res.status(401).json({ error: 'Unauthorised Access' });
         }
-        return res.status(200).json({ success: 'User Logged in successfully' });
+        //Generate Access Token
+        let payload = {
+            email: req.body.email,
+            role: 'user'
+        }
+        let privateKey = 'codeforindia'
+        var token = jwt.sign(payload, privateKey, { expiresIn: '1h' });
+
+        return res.status(200).json({ success: 'User Logged in successfully', token });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });

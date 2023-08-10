@@ -1,0 +1,14 @@
+starting time = 9.38
+
+we are going to work with html5
+HTML - HyperText Markup Language
+Not a programming language
+markup language for creating web pages
+building blocks of the web 
+
+
+creation of a file
+
+does not need a server
+files must end with an extension called .html
+runs on a web browser - we are using chrome

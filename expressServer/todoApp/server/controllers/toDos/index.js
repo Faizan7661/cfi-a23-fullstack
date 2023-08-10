@@ -1,6 +1,8 @@
 import express from 'express';
 import fs from 'fs/promises';
 import bcrypt from 'bcrypt';
+import authMiddleware from '../../middleware/auth/verifyTokens.js';
+
 
 const router = express.Router();
 
@@ -15,40 +17,8 @@ function generateTaskId() {
   return taskId;
 }
 
-router.post('/register', async (req, res) => {
-  try {
-    let { firstName, lastName, email, mobileNumber, password, password2, address, } = req.body;
-    if (password2 !== password) {
-      return res.status(400).json({ error: "Passwords don't match please try again." });
-    }
-    let fileData = await fs.readFile('data.json');
-    fileData = JSON.parse(fileData);
-    let findEmail = fileData.find((ele) => ele.email == email);
-    if (findEmail) {
-      return res.status(409).json({ error: 'Email already exists please login' });
-    }
-    password = await bcrypt.hash(password, 12);
-    let userData = {
-      firstName,
-      lastName,
-      email,
-      password,
-      mobileNumber,
-      address,
-      toDos: []
-    };
-    fileData.push(userData);
-
-      
-    return res.status(200).json({ success: 'User registered successfully' });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
 //task add
-router.post('/', async (req, res) => {
+router.post('/', authMiddleware, async (req, res) => {
   try {
     let { taskName, taskDescription } = req.body;
 
@@ -84,7 +54,7 @@ router.post('/', async (req, res) => {
 
 
 //edit
-router.put('/', async (req, res) => {
+router.put('/',authMiddleware, async (req, res) => {
   try {
 
     let { taskId, taskName, taskDescription } = req.body
@@ -128,7 +98,7 @@ router.put('/', async (req, res) => {
 
 
 //delete
-router.delete('/', async (req, res) => {
+router.delete('/',authMiddleware, async (req, res) => {
   try {
 
     let { taskId } = req.body
@@ -163,7 +133,7 @@ router.delete('/', async (req, res) => {
 
 
 //fetch
-router.get('/', async (req, res) => {
+router.get('/',authMiddleware, async (req, res) => {
   try {
     let fileData = await fs.readFile('data.json');
     fileData = JSON.parse(fileData);
