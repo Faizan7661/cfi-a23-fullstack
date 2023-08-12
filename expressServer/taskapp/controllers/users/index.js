@@ -24,7 +24,9 @@ router.post('/register', async (req, res) => {
             email,
             password,
             mobileNumber,
-            address
+            address,
+            generatedToken : "",
+            toDos :[]
         }
         fileData.push(userData);
         //fs.writeFile
@@ -44,20 +46,21 @@ router.post('/login', async (req, res) => {
         fileData = JSON.parse(fileData);
         let findEmail = fileData.find((ele) => ele.email == req.body.email);
         if (!findEmail) {
-            return res.status(401).json({ error: 'Unauthorised Access' });
+            return res.status(401).json({ error: 'Email Not Found' });
         }
         const matchPassword = await bcrypt.compare(req.body.password, findEmail.password);
         if (!matchPassword) {
-            return res.status(401).json({ error: 'Unauthorised Access' });
+            return res.status(401).json({ error: 'incorrect password' });
         }
         //Generate Access Token
         let payload = {
             email: req.body.email,
-            role: 'user'
+            role: 'user',
         }
         let privateKey = 'codeforindia'
         var token = jwt.sign(payload, privateKey, { expiresIn: '1h' });
-
+        findEmail.generatedToken = token;
+        await fs.writeFile('data.json', JSON.stringify(fileData));
         return res.status(200).json({ success: 'User Logged in successfully', token });
     } catch (error) {
         console.error(error);

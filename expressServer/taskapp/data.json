@@ -1,1 +1,23 @@
-[{"firstName":"Mohammed","lastName":"Faizan","email":"faizanconnectt@gmail.com","password":"$2b$12$Ygh0eXsP05NuCv2yzuK00OdnvozeiSayJa.R0GV3iTbrjzjJC5doy","mobileNumber":"7661936118","address":"Hyderabad , TS","toDos":[{"taskId":"s7dFJ2FCZz5S","taskName":"number 1","taskDescription":"successfully added number 1"}]},{"firstName":"Mohammed","lastName":"Faizan","email":"mohammedfaizan7661@gmail.com","password":"$2b$12$m6CpV7QqflSx4Or6GXKGUesqS5r0CH9db.4ZyfF8Vk.1FrqnOxA06","mobileNumber":"7661936118","address":"Hyderabad , TS","toDos":[{"taskId":"rxuAh6Gy1MRg","taskName":"number 1","taskDescription":"successfully added number 1"},{"taskId":"0v8OepIlzLpy","taskName":"number 2","taskDescription":"successfully added number 2"},{"taskId":"UPlfhVNAKepb","taskName":"number 4","taskDescription":"successfully added number 4"}]}]
+[
+    {
+        "firstName": "mohammed",
+        "lastName": "faizan",
+        "email": "mohammedfaizan7661@gmail.com",
+        "password": "$2b$12$x1kG/OuMPjuR2q8Fw537TeM.bkQ23VDE7t6icaH.kyiehXFjaFB6C",
+        "mobileNumber": "7661936118",
+        "address": "Hyderabad",
+        "generatedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtbWVkZmFpemFuNzY2MUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MTg2MTU5MywiZXhwIjoxNjkxODY1MTkzfQ.GqwCD1TbUBJgPfBJombn4GY0RTxTcdWvX0RccLbniY4",
+        "toDos": [
+            {
+                "taskId": "SG6g3taDee8Y",
+                "taskName": "task 1",
+                "taskDescription": "adding task"
+            },
+            {
+                "taskId": "5JHUWa7Mzx9X",
+                "taskName": "task three",
+                "taskDescription": "changing task 3 to task three"
+            }
+        ]
+    }
+]
