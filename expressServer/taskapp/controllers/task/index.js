@@ -37,7 +37,7 @@ router.post('/', validationMiddleware, async (req, res) => {
 
         try {
             const decoded = jwt.verify(token, privateKey);
-            
+
             let fileData = await fs.readFile('data.json');
             let data = JSON.parse(fileData);
             let findEmail = data.find((ele) => ele.email === decoded.email);
@@ -53,7 +53,7 @@ router.post('/', validationMiddleware, async (req, res) => {
             };
 
             findEmail.toDos.push(taskDetails);
-            
+
             await fs.writeFile('data.json', JSON.stringify(data));
             return res.status(200).json({ success: 'Task details updated successfully' });
         } catch (err) {
@@ -88,10 +88,9 @@ router.put('/', validationMiddleware, async (req, res) => {
             res.status(401).json({ error: "Unauthorized access" })
         }
 
-        jwt.verify(token, privateKey, async (err, decoded) => {
-            if (err) {
-                res.status(401).json({ error: "unauthorzed access" })
-            }
+        try {
+
+            const decoded = jwt.verify(token, privateKey);
 
             let fileData = await fs.readFile('data.json');
             let data = JSON.parse(fileData);
@@ -115,9 +114,9 @@ router.put('/', validationMiddleware, async (req, res) => {
 
             await fs.writeFile('data.json', JSON.stringify(data));
             return res.status(200).json({ success: 'task is updated' });
-
-        })
-
+        } catch (error) {
+            return res.status(401).json({ error: `unauthorized access` })
+        }
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });
@@ -136,33 +135,33 @@ router.delete('/', validationMiddleware, async (req, res) => {
         }
 
         const token = req.headers["auth-token"]
-        if(!token){
-            res.status(401).json({error : "Unauthorized Access"})
+        if (!token) {
+            res.status(401).json({ error: "Unauthorized Access" })
         }
 
-        jwt.verify(token,privateKey, async (err,decoded)=>{
-            if(err){
-                res.status(401).json({error : "Unauthorized Acess"})
+        try {
+            const decoded = jwt.verify(token,privateKey);
+            let fileData = await fs.readFile('data.json');
+            let data = JSON.parse(fileData);
+            let findEmail = data.find((ele) => ele.email === decoded.email);
+
+            const indexToDelete = findEmail.toDos.findIndex((todo) => todo.taskId === req.body.taskId);
+
+            if (indexToDelete !== -1) {
+
+                findEmail.toDos.splice(indexToDelete, 1);
+                res.send("Task deleted successfully.");
+            } else {
+                res.status(404).send("Task ID not found. Task not deleted.");
             }
-        
-        let fileData = await fs.readFile('data.json');
-        let data = JSON.parse(fileData);
-        let findEmail = data.find((ele) => ele.email === decoded.email);
 
-        const indexToDelete = findEmail.toDos.findIndex((todo) => todo.taskId === req.body.taskId);
 
-        if (indexToDelete !== -1) {
-
-            findEmail.toDos.splice(indexToDelete, 1);
-            res.send("Task deleted successfully.");
-        } else {
-            res.status(404).send("Task ID not found. Task not deleted.");
+            await fs.writeFile('data.json', JSON.stringify(data));
+            return res.status(200).json({ success: 'task is deleted' });
+            
+        } catch (error) {
+            return res.status(401),json({error : `Unauthorized Access`})
         }
-
-
-        await fs.writeFile('data.json', JSON.stringify(data));
-        return res.status(200).json({ success: 'task is deleted' });
-    })
 
     } catch (error) {
         console.error(error);
@@ -179,17 +178,18 @@ router.get('/', validationMiddleware, async (req, res) => {
             res.status(401).json({ error: "Unauthorized Access" });
         }
 
-        jwt.verify(token, privateKey, async (err, decoded) => {
-            if (err) {
-                res.status(401).json({ error: "Unauthorized Access" });
-            }
-
+        try {
+            const decoded = jwt.verify(token,privateKey);
+            
             let fileData = await fs.readFile('data.json');
             fileData = JSON.parse(fileData);
             const findEmail = fileData.find((element) => element.email === decoded.email);
             let allTasks = findEmail.toDos;
             return res.status(200).json({ allTasks });
-        });
+
+        } catch (error) {
+            return res.status(401).json({error : `Unauthorized Access`})
+        }
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });

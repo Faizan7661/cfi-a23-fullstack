@@ -31,7 +31,7 @@ async function taskAdd() {
             }
         });
         console.log(response.data);
-        console.log("Task Added Successfully");
+        // console.log("Task Added Successfully");
 
     } catch (error) {
         if (error.response && error.response.data && error.response.data.error) {
@@ -75,7 +75,7 @@ async function taskReplace() {
             }
         });
         console.log(response.data);
-        console.log("Task Replaced Successfully");
+        // console.log("Task Replaced Successfully");
     } catch (error) {
         if (error.response && error.response.data && error.response.data.error) {
             console.error(chalk.red(error.response.data.error));
@@ -109,7 +109,7 @@ async function taskDelete(){
             }
         });
         console.log(response.data);
-        console.log("Task Deleted Successfully");
+        // console.log("Task Deleted Successfully");
    
    } catch (error) {
         if (error.response && error.response.data && error.response.data.error) {

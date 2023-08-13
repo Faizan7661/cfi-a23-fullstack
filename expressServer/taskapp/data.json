@@ -6,7 +6,7 @@
         "password": "$2b$12$x1kG/OuMPjuR2q8Fw537TeM.bkQ23VDE7t6icaH.kyiehXFjaFB6C",
         "mobileNumber": "7661936118",
         "address": "Hyderabad",
-        "generatedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtbWVkZmFpemFuNzY2MUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MTg2MTU5MywiZXhwIjoxNjkxODY1MTkzfQ.GqwCD1TbUBJgPfBJombn4GY0RTxTcdWvX0RccLbniY4",
+        "generatedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtbWVkZmFpemFuNzY2MUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MTkyOTEzOSwiZXhwIjoxNjkxOTMyNzM5fQ.NNuJYXPiWDVLcpjnWUTFXswVThgrKn5Xnx__wXN5HGU",
         "toDos": [
             {
                 "taskId": "SG6g3taDee8Y",
@@ -17,6 +17,63 @@
                 "taskId": "5JHUWa7Mzx9X",
                 "taskName": "task three",
                 "taskDescription": "changing task 3 to task three"
+            },
+            {
+                "taskId": "A3Qp6AD84m7s",
+                "taskName": "task adding via login route",
+                "taskDescription": "tayuygs"
+            },
+            {
+                "taskId": "Uu83usGdp0AC",
+                "taskName": "task two",
+                "taskDescription": "changing task 2 to task two"
+            },
+            {
+                "taskId": "7J3HPcLSPpA7",
+                "taskName": "task 4",
+                "taskDescription": "crud after login"
+            }
+        ]
+    },
+    {
+        "firstName": "mohammed",
+        "lastName": "zeeshan",
+        "email": "zeeshan@gmail.com",
+        "password": "$2b$12$aNRb9iwjYbHxW5TFcsCPf.EJlmaHaSXQkDhc61E7qmjdME6RMCFFe",
+        "mobileNumber": "7207570817",
+        "address": "Hyderabad",
+        "generatedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InplZXNoYW5AZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2OTE4NjUwNzEsImV4cCI6MTY5MTg2ODY3MX0.wxBz-fmgX9g8RFNx9wHV5fR8DiQ4RrdaUO-nJImdLXk",
+        "toDos": [
+            {
+                "taskId": "GIF0vAGwGHlb",
+                "taskName": "task 1",
+                "taskDescription": "adding task 1 in zee id"
+            },
+            {
+                "taskId": "kGsiuKzHLm9N",
+                "taskName": "task 2",
+                "taskDescription": "adding task 2 in zee id"
+            }
+        ]
+    },
+    {
+        "firstName": "qazi hassan",
+        "lastName": "siddiqui",
+        "email": "qazi@gmail.com",
+        "password": "$2b$12$xPJkGLQ4uEWCbJqU/OP9Ae8KagBNjryWJPjq1EnSu8iDPO3Vmsi7S",
+        "mobileNumber": "9876543210",
+        "address": "Rein Bazar ,Hyderabad",
+        "generatedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InFhemlAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2OTE5MjMyNTUsImV4cCI6MTY5MTkyNjg1NX0.m3xjYBWViD5K0y6wWgrJG2PtVZz-rxcbZDHbmxNetfc",
+        "toDos": [
+            {
+                "taskId": "J2buTT4Ii4lo",
+                "taskName": "task one",
+                "taskDescription": "task 1 to task one"
+            },
+            {
+                "taskId": "VNsqUCn6H8Kk",
+                "taskName": "task 2",
+                "taskDescription": "task 2 inn hassan"
             }
         ]
     }
