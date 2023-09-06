@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Profile Card</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .profile-card {
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 400px;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 10px;
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="" alt="Profile Image" />
+      </div>
+      <h1 id="name">Name</h1>
+      <p id="followers">Followers:</p>
+      <p id="following">Following:</p>
+      <p id="bio">Bio:</p>
+      <p id="location">Location:</p>
+      <p id="email">Email:</p>
+      <p id="hireable">Hireable:</p>
+
+      <!-- Input field and button for GitHub username -->
+      <input
+        type="text"
+        id="githubUsername"
+        placeholder="Enter GitHub Username"
+      />
+      <button id="fetchButton">Fetch Details</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

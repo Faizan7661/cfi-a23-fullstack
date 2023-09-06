@@ -1,15 +1,18 @@
 import readlineSync from 'readline-sync';
 import axios from 'axios';
 import chalk from 'chalk';
+import fs from "fs/promises"
 import { taskAdd, taskReplace, taskDelete, Fetch } from './taskCRUD.js'
+import { log } from 'console';
+
 
 async function userLogin() {
     try {
         console.clear();
-        console.log(`
+        console.log(chalk.green(`
    ====================================\n
-   \tLogin page\n 
-   ====================================`);
+   \t\tLogin page\n 
+   ====================================`));
         let email = readlineSync.questionEMail(`Enter Your Email Id : `)
         while (!email) {
             email = readlineSync.questionEMail(`Enter Valid Email Id to Continue : `)
@@ -26,9 +29,10 @@ async function userLogin() {
             email: email,
             password: password
         });
-
+                
         console.log(response.data);
         console.log("User Logged in Successfully");
+        await fs.writeFile('token.txt', response.data.token);
         await handlingCRUD()
 
     } catch (error) {
@@ -45,7 +49,7 @@ async function handlingCRUD(){
     try {
         console.clear();
         console.log("===================================");
-        console.log("\t OUR TODO CLI APP");
+        console.log("\t CRUD Operations");
         console.log("===================================");
         console.log(`
     Press 0 to Exit
@@ -53,6 +57,7 @@ async function handlingCRUD(){
     Press 2 to Update/Replace a Task
     Press 3 to Delete a Task
     Press 4 to Fetch toDos Of a User
+    Press 5 to Logout
     `)
         let option = readlineSync.questionInt("Please Enter your Choice : ");
         switch (option) {
@@ -71,6 +76,10 @@ async function handlingCRUD(){
             case 4:
                 await Fetch();
                 break;
+            case 5 :
+                fs.unlink(`token.txt`);
+                console.log(`Logged Out Successfully`);
+                break;
             default:
                 console.log("Invalid Option");
         }
@@ -84,7 +93,7 @@ async function handlingCRUD(){
         ) {
             await handlingCRUD();
         } else {
-            console.log("Thank you for Using, Bye!")
+            console.log("Returning to menu!")
         }
     } catch (error) {
     return res.status(401).json({error : `Unauthorized Access`})

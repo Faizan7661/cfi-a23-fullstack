@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo-toggle</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.5.0/dist/axios.min.js"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 40px 0;
+        font-size: 1.4em;
+        font-family: sans-serif;
+        min-width: 600px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      }
+
+      body{
+        background-color: bisque;
+      }
+
+      #headings {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+      }
+
+     
+    th, td {
+        padding: 16px 20px;
+        text-align: center;
+        border: 2px solid #000000;
+        font-size: medium;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid #dddddd;
+      }
+
+      tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+      }
+
+      tr:hover {
+        font-weight: bold;
+        color: #009879;
+      }
+
+      #toggle {
+        background-color: #009879;
+        color: white;
+        padding: 10px;
+        border: 1px black solid;
+        border-radius: 5px;
+        margin-top: 20px; /* Adjusted margin-top */
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6em;
+        font-weight: bold;
+        width: 400px;
+        cursor: pointer; /* Added cursor pointer */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main">
+        <center>
+          <button id="toggle">Toggle</button>
+
+          <table id="table">
+            <thead id="headings">
+              <tr>
+                <th id="th">User ID</th>
+                <th id="th">ID</th>
+                <th id="th">Title</th>
+                <th id="th">Completed</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </center>
+      </div>
+    </div>
+
+    <script>
+      let tableBody = document.getElementById("table-body");
+      let toggleButton = document.getElementById("toggle");
+      let toggle = true;
+
+      async function fetchData() {
+        try {
+          let response = await axios.get(
+            "https://jsonplaceholder.typicode.com/todos"
+          );
+          console.log(response.data);
+          response.data.forEach((item) => {
+            let row = tableBody.insertRow();
+            let userIdCell = row.insertCell(0);
+            let idCell = row.insertCell(1);
+            let titleCell = row.insertCell(2);
+            let completedCell = row.insertCell(3);
+            userIdCell.innerHTML = item.userId;
+            idCell.innerHTML = item.id;
+            titleCell.innerHTML = item.title;
+            completedCell.innerHTML = item.completed;
+          });
+        } catch (error) {
+          console.error(error);
+          alert("Error Occurred while fetching data");
+        }
+      }
+
+      function toggleTable() {
+        toggle = !toggle;
+        let rows = tableBody.querySelectorAll("tr");
+
+        rows.forEach((row) => {
+          let completedCell = row.cells[3];
+
+          if (
+            (toggle && completedCell.innerHTML === "true") ||
+            (!toggle && completedCell.innerHTML === "false")
+          ) {
+            row.style.display = "table-row";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      }
+
+      fetchData();
+      toggleButton.addEventListener("click", toggleTable);
+
+      
+    </script>
+  </body>
+</html>
+
+<!-- user id id title completed  -->

@@ -25,8 +25,7 @@ router.post('/register', async (req, res) => {
             password,
             mobileNumber,
             address,
-            generatedToken : "",
-            toDos :[]
+            toDos: []
         }
         fileData.push(userData);
         //fs.writeFile
@@ -59,8 +58,6 @@ router.post('/login', async (req, res) => {
         }
         let privateKey = 'codeforindia'
         var token = jwt.sign(payload, privateKey, { expiresIn: '1h' });
-        findEmail.generatedToken = token;
-        await fs.writeFile('data.json', JSON.stringify(fileData));
         return res.status(200).json({ success: 'User Logged in successfully', token });
     } catch (error) {
         console.error(error);

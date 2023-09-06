@@ -6,10 +6,13 @@ async function fetchGithubDetails(username) {
         let response = await axios.get(`https://api.github.com/users/${username}`);
         const data = response.data;
         return data;
+        // console.log(data)
     } catch (error) {
         console.error(error);
     }
 }
+
+// fetchGithubDetails("adnanali-in")
 
 async function fetchingrepos(repos) {
     try {

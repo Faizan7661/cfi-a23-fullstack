@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Formatter</title>
+    <style>
+      @font-face {
+        font-family: ubuntu;
+        src: url(fonts/UbuntuMono-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: unsteady;
+        src: url(fonts/UNSTEADY.TTF);
+      }
+
+      @font-face {
+        font-family: ambystoma;
+        src: url(fonts/Ambystoma-Mexicanum.ttf);
+      }
+      @font-face {
+        font-family: best;
+        src: url(fonts/Best-Valentina-TTF.ttf);
+      }
+
+
+      body {
+        margin: 0; 
+        padding: 0; 
+        background-color: black;
+
+      }
+
+      .window {
+        background-color: green;
+        width: 730px;
+        height: 610px;
+        margin-bottom: 30px;
+        border: 0.2px black solid;
+        border-radius: 20px;
+        padding-top: 5px;
+      }
+      center {
+        margin-top: 80px;
+      }
+
+      .bottom {
+        text-align: center;
+      }
+
+      .bottom p {
+        margin-top: 5px;
+      }
+
+      h1,h2{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+         
+      }
+      .subHeading{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        color: white;
+      }
+
+      #tarea1{
+        width: 570px;
+        height: 110px;
+        padding-top: 8px;
+        padding-left: 14px;
+      }
+
+      .choose{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: white;
+      }
+      #fonts{
+        padding: 4px;
+
+      }
+
+      .submitbutton{
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        text-align: center;
+        margin-left: 8px;
+      }
+      .lastText{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        margin-bottom: 1px;
+        color: white;
+      }
+
+      #changedText{
+        width: 570px;
+        height: 110px;
+        padding-top: 8px;
+        padding-left: 14px;
+      }
+      .cfi, .bottom{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+    </style>
+  </head>
+  <body >
+    <center>
+      <div class="window">
+        <h1>Text Font Formatter</h1>
+        <h2 id="username">Hi,</h2>
+        <div class="fontformattor">
+          <div class="container1">
+            <form id="form1">
+              <p>
+                <label for="subHeading" class="subHeading">Enter Your Text Here :</label>
+              </p>
+              <textarea id="tarea1" placeholder="Enter Text Here"></textarea
+              ><br /><br />
+              <label class="choose" for="fonts">Choose Font : </label>
+              <select name="fonts" id="fonts">
+                <option value="ubuntu">Ubutnu</option>
+                <option value="best">Best Valentina</option>
+                <option value="unsteady">Unsteady Oversteer</option>
+                <option value="ambystoma">Ambystoma-Mexicanum</option></select
+              ><br /><br />
+              <input class="submitbutton" type="button" value="Submit" onclick="changeFont()" />
+            </form>
+          </div>
+          <p class="lastText">
+            The Formatted Text is :
+            <br />
+            <br />
+          </p>
+          <textarea id="changedText" readonly></textarea>
+        </div>
+      </div>
+    </center>
+    <footer class="bottom">
+      <a class="cfi" href="https://codeforindia.com/" target="_blank"
+        >Code For India</a
+      >
+      <p class="copy">&copy; Copyrights. All Rights Reserved 2023</p>
+    </footer>
+  </body>
+  <script>
+    let name = prompt('Enter your Name')
+    document.getElementById('username').innerText = document.getElementById('username').innerText + '  ' +name;
+    function changeFont() {
+      let text = document.getElementById("tarea1").value;
+      let selectEle = document.getElementById("fonts");
+      let fontName = selectEle.value;
+      let changedText = document.getElementById("changedText");
+      changedText.innerText = text;
+      changedText.style.fontFamily = fontName;
+    }
+  </script>
+</html>

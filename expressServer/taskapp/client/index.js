@@ -1,7 +1,7 @@
 import readlineSync from "readline-sync";
 import userRegistration from "./users/userRegister.js";
 import userLogin from "./users/userLogin.js";
-import { taskAdd, taskReplace,taskDelete,Fetch } from "./users/taskCRUD.js";
+// import { taskAdd, taskReplace,taskDelete,Fetch } from "./users/taskCRUD.js";
 
 
 
@@ -15,10 +15,6 @@ async function displayMenu() {
     Press 0 to Exit
     Press 1 To Create a User
     Press 2 to Login
-    Press 3 to Add a Task
-    Press 4 to Update/Replace a Task
-    Press 5 to Delete a Task
-    Press 6 to Fetch toDos Of a User
     `)
         let option = readlineSync.questionInt("Please Enter your Choice : ");
         switch (option) {
@@ -30,18 +26,6 @@ async function displayMenu() {
                 break;
             case 2:
                 await userLogin();
-                break;
-            case 3:
-                await taskAdd();
-                break;
-            case 4:
-                await taskReplace();
-                break;
-            case 5:
-                await taskDelete();
-                break;
-            case 6:
-                await Fetch();
                 break;
             default:
                 console.log("Invalid Option");

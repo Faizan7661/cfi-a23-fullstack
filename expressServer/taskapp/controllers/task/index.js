@@ -29,20 +29,11 @@ router.post('/', validationMiddleware, async (req, res) => {
 
         taskDescription = taskDescription || ' ';
 
-        const token = req.headers['auth-token'];
-
-        if (!token) {
-            return res.status(401).json({ error: 'Unauthorized Access' });
-        }
-
-        try {
-            const decoded = jwt.verify(token, privateKey);
-
             let fileData = await fs.readFile('data.json');
             let data = JSON.parse(fileData);
-            let findEmail = data.find((ele) => ele.email === decoded.email);
+            let findEmail = data.find((ele) => ele.email === req.payload.email);
 
-            if (!findEmail || findEmail.email !== decoded.email) {
+            if (!findEmail || findEmail.email !== req.payload.email) {
                 return res.status(401).json({ error: 'Unauthorized Access' });
             }
 
@@ -51,14 +42,12 @@ router.post('/', validationMiddleware, async (req, res) => {
                 taskName,
                 taskDescription
             };
-
+             
+            
             findEmail.toDos.push(taskDetails);
 
             await fs.writeFile('data.json', JSON.stringify(data));
             return res.status(200).json({ success: 'Task details updated successfully' });
-        } catch (err) {
-            return res.status(401).json({ error: 'Unauthorized Access' });
-        }
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });
@@ -83,18 +72,9 @@ router.put('/', validationMiddleware, async (req, res) => {
         }
         taskDescription = taskDescription || ' ';
 
-        const token = req.headers["auth-token"]
-        if (!token) {
-            res.status(401).json({ error: "Unauthorized access" })
-        }
-
-        try {
-
-            const decoded = jwt.verify(token, privateKey);
-
             let fileData = await fs.readFile('data.json');
             let data = JSON.parse(fileData);
-            let findEmail = data.find((ele) => ele.email === decoded.email);
+            let findEmail = data.find((ele) => ele.email === req.payload.email);
             let taskFound = false;
 
             for (let i = 0; i < findEmail.toDos.length; i++) {
@@ -114,9 +94,6 @@ router.put('/', validationMiddleware, async (req, res) => {
 
             await fs.writeFile('data.json', JSON.stringify(data));
             return res.status(200).json({ success: 'task is updated' });
-        } catch (error) {
-            return res.status(401).json({ error: `unauthorized access` })
-        }
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });
@@ -133,17 +110,9 @@ router.delete('/', validationMiddleware, async (req, res) => {
         if (!taskId) {
             return res.status(400).json({ error: 'Enter taskId to continue' });
         }
-
-        const token = req.headers["auth-token"]
-        if (!token) {
-            res.status(401).json({ error: "Unauthorized Access" })
-        }
-
-        try {
-            const decoded = jwt.verify(token,privateKey);
             let fileData = await fs.readFile('data.json');
             let data = JSON.parse(fileData);
-            let findEmail = data.find((ele) => ele.email === decoded.email);
+            let findEmail = data.find((ele) => ele.email === req.payload.email);
 
             const indexToDelete = findEmail.toDos.findIndex((todo) => todo.taskId === req.body.taskId);
 
@@ -159,10 +128,6 @@ router.delete('/', validationMiddleware, async (req, res) => {
             await fs.writeFile('data.json', JSON.stringify(data));
             return res.status(200).json({ success: 'task is deleted' });
             
-        } catch (error) {
-            return res.status(401),json({error : `Unauthorized Access`})
-        }
-
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });
@@ -173,27 +138,22 @@ router.delete('/', validationMiddleware, async (req, res) => {
 //fetch
 router.get('/', validationMiddleware, async (req, res) => {
     try {
-        const token = req.headers["auth-token"];
-        if (!token) {
-            res.status(401).json({ error: "Unauthorized Access" });
-        }
-
-        try {
-            const decoded = jwt.verify(token,privateKey);
             
             let fileData = await fs.readFile('data.json');
             fileData = JSON.parse(fileData);
-            const findEmail = fileData.find((element) => element.email === decoded.email);
-            let allTasks = findEmail.toDos;
-            return res.status(200).json({ allTasks });
+            const findEmail = fileData.find((element) => element.email === req.payload.email);
+            let tasks = findEmail.toDos;
+            return res.status(200).json({ tasks });
 
-        } catch (error) {
-            return res.status(401).json({error : `Unauthorized Access`})
-        }
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Internal Server Error' });
     }
+});
+
+
+router.get('/auth', validationMiddleware, (req, res) => {
+    return res.status(200).json({ success: 'Token is valid' });
 });
 
 export default router;

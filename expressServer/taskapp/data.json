@@ -6,7 +6,6 @@
         "password": "$2b$12$x1kG/OuMPjuR2q8Fw537TeM.bkQ23VDE7t6icaH.kyiehXFjaFB6C",
         "mobileNumber": "7661936118",
         "address": "Hyderabad",
-        "generatedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtbWVkZmFpemFuNzY2MUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY5MTkyOTEzOSwiZXhwIjoxNjkxOTMyNzM5fQ.NNuJYXPiWDVLcpjnWUTFXswVThgrKn5Xnx__wXN5HGU",
         "toDos": [
             {
                 "taskId": "SG6g3taDee8Y",
@@ -32,6 +31,11 @@
                 "taskId": "7J3HPcLSPpA7",
                 "taskName": "task 4",
                 "taskDescription": "crud after login"
+            },
+            {
+                "taskId": "XsjB3OEmvgyj",
+                "taskName": "jisj",
+                "taskDescription": "isji"
             }
         ]
     },

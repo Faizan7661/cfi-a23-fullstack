@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Lister</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #main-header{
+            background-color: green;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0.1px;
+        
+        }
+        #header-title{
+            text-align: center;
+        }
+        #main-header h1{
+            padding: 8px;
+        }
+        #main{
+            padding-top: 50px;
+            border: 1px black solid;
+            width: 500px;
+            height: 600px;
+            margin-top: 150px;
+            margin-left: 550px;
+            margin-bottom: 20px;
+        }
+        .list-group-items{
+            border: 1px black solid;
+            margin: 1px;
+            list-style: none;
+            padding: 5px 5px 5px 8px;
+            margin: 0px 18px;
+        }
+        .title{
+            padding-left: 18px;
+        }
+        .form-control-mr-2{
+            margin-left: 18px;
+        }
+        h2{
+            padding-bottom: 5px;
+        }
+        .btn-2{
+            background-color: black;
+            border: 1px white solid;
+            width: 467px;
+            text-align: center;
+            color: white;
+            height: 33px;
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+
+    </style>
+</head>
+<body>
+    <header id ="main-header" class="bg-success text-white p-4 mb-3">
+        <div class="container">
+            <h1 id="header-title">Item Lister</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div id="main" class="card card-body">
+            <h2 class="title">
+                Add Items
+            </h2>
+            <form class="Form-inline mb-3">
+                <input type="text" class="form-control-mr-2">
+                <input type="submit" class="btn btn-dark" value="Submit">
+            </form>
+            <h2 class="title">Items</h2>
+            <ul id="items" class="list-group">
+                <li class="list-group-items">Item 1</li>
+                <li class="list-group-items">Item 2</li>
+                <li class="list-group-items">Item 3</li>
+                <li class="list-group-items">Item 4</li>
+
+            </ul>
+            <br>
+            <button class="btn-2" id="button">Click Here</button><br><br>
+            <div class="box" id="box" style="width : 470px; height :235px; background-color: white; margin : 0 17px "></div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    // // Adding Backkground color to lists 
+    // let items = document.getElementsByClassName(`list-group-items`);
+    // for(let i=0;i<items.length;i++){
+    //     items[i].style.backgroundColor ='#f4f4f4'
+    // }
+    // // let main = document.getElementById(`main`);
+    // // main.style.backgroundColor = "black";
+
+    // let input = document.querySelector(`input`);
+    // input.value = `Hello World`;
+    // let submit = document.querySelector(`input[type="submit"]`);
+    // submit.value = "SEND";
+    // let item = document.querySelector(`.list-group-items`);
+    // item.style.color = "red";//this will only apply the color to the first one
+
+    let odd = document.querySelectorAll("li:nth-child(odd)");
+    let even = document.querySelectorAll("li:nth-child(even)");
+
+    for(let i=0;i<odd.length;i++){
+        odd[i].style.backgroundColor ="#f4f4f4";
+        even[i].style.backgroundColor="#CCCC"
+    }
+
+    var itemList = document.querySelector(`#items`);
+    //parentNode
+    // console.log(itemList.parentNode)
+    itemList.parentNode.style.backgroundColor = "#f4f4f4";
+
+    var button = document.getElementById("button")
+
+    button.addEventListener('click', clickme);
+
+    var box = document.getElementById("box");
+
+    box.addEventListener('mouseenter', runEvent)
+
+    function clickme(){
+        console.log(123)
+    }
+
+    function runEvent(event){
+        console.log(`Event Type = ` + event.type)
+    }
+</script>
+</html>
+
+

@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Mohammed Faizan",
+        "phoneNumber": "7661936118",
+        "email": "mohammedfaizan7661@gmail.com",
+        "password": "$2b$12$Ii7pLg.OdWaAfGeZs7w9weW/Zw3iXM1S8FbfgVDr3qulZaV0D1iwC",
+        "area": "mallepally",
+        "branch": "mallepally",
+        "pincode": "500001",
+        "typeOfAccount": "savings",
+        "pinNumber": "1234",
+        "accountNumber": "972207849493",
+        "bankBalance": 4699,
+        "transactionsHistory": [
+            {
+                "type": "deposit",
+                "amount": 4000,
+                "date": "2023-08-21T21:47:20.599Z"
+            },
+            {
+                "type": "deposit",
+                "amount": 400,
+                "date": "2023-08-21T21:49:49.726Z"
+            },
+            {
+                "type": "withdraw",
+                "amount": 400,
+                "date": "2023-08-21T21:54:35.360Z"
+            },
+            {
+                "type": "deposit",
+                "amount": 400,
+                "date": "2023-08-21T21:58:12.658Z"
+            },
+            {
+                "type": "deposit",
+                "amount": 299,
+                "date": "2023-08-23T09:41:32.855Z"
+            }
+        ]
+    }
+]

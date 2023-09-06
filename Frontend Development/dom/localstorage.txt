@@ -1,0 +1,33 @@
+Local storage is a web browser feature that allows you to store data on the client-side 
+(in the user's browser) persistently. This means that even if the user closes their browser 
+or navigates away from your website, the data you store in local storage will still be available 
+when they return to your website later. Local storage is typically used for small amounts of data, 
+such as user preferences, settings, or temporary information.
+
+
+localStorage.setItem is used to store data in the web browser's local storage. It allows you to 
+save key-value pairs as strings in a client-side storage area that persists even after the user 
+closes their browser or navigates away from your website. 
+
+
+localStorage.getItem is a JavaScript method used to retrieve a specific item (a value) from the web 
+browser's local storage. It allows you to access the data that you previously stored using localStorage.setItem.
+
+
+// This line defines an object called 'userData' with two properties: 'name' and 'attempts'.
+// It appears to be using the values of the 'name' and 'attempts' variables in the current scope.
+const userData = {
+  name: name,
+  attempts: attempts + 1,
+};
+
+// This line retrieves data from local storage. It attempts to get an item called "userList".
+// If "userList" doesn't exist in local storage, it defaults to an empty array '[]'.
+const userList = JSON.parse(localStorage.getItem("userList")) || [];
+
+// This line adds the 'userData' object (containing 'name' and 'attempts') to the 'userList' array.
+userList.push(userData);
+
+// This line stores the updated 'userList' array back into local storage, but as a string.
+// Local storage can only store strings, so we use JSON.stringify() to convert the array to a string.
+localStorage.setItem("userList", JSON.stringify(userList));
