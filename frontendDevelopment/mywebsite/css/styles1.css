@@ -1,0 +1,58 @@
+#main-header{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.sidebar{
+    float: left;
+    width :20%;
+    height: 100%;
+    background-color: black;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 15px;
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+    
+}
+
+.profileNames{
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 18px;
+    color: aliceblue;
+    text-align: center;
+
+}
+
+ul{
+    text-decoration: none;
+    font-weight: bolder;
+    color: azure;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 10px;
+    list-style: none;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+hr{
+    color: aliceblue;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+}

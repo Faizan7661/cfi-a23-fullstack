@@ -1,0 +1,133 @@
+.Subscribe-button{
+    background-color: rgb(200, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-right: 8px;
+    transition: opacity 0.15s;
+
+    margin-left: 8px;
+}
+.Subscribe-button:hover{
+    opacity: 0.8;
+}
+.Subscribe-button:active{
+    opacity: 0.5;
+}
+.join-button{
+    background-color: white;
+    border: 1px rgb(26, 118, 239) solid;
+    cursor: pointer;
+    padding: 9px 16px;
+    border-radius: 2px;
+    color: rgb(26, 118, 239);
+    margin-right: 8px;
+    transition: background-color 0.15s;
+
+}
+
+.join-button:hover{
+    background-color: rgb(26, 118, 239) ;
+    color: white
+}
+
+.join-button:active{
+    opacity: 0.7;
+}
+.tweet-button{
+    background-color: rgb(15, 141, 225);
+    border-radius: 18px;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    
+}
+
+.tweet-button:hover{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+}
+.request-now-button{
+    background-color: black;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    text-align: center;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.linked-in{
+    background-color: rgb(10, 102,194);
+    color: white;
+    font-weight: bolder;
+    padding: 10px 16px;
+    border-radius: 18px;
+    border: none;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.save{
+    background-color: white;
+    border: 1px rgb(10, 102,194) solid;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 18px;
+    color: rgb(10, 102,194);
+    font-size: 15px;
+    margin-left: 8px; 
+    font-weight: bolder;
+
+}
+.strech{
+    margin-left: 8px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    font-weight: bolder;
+    transition: padding 1s;
+    cursor: pointer;
+
+}
+
+.strech:hover{
+    padding: 18px 36px;
+}
+.back{
+    padding-top: 8px 0;
+    margin: 0 8px 0 8px;
+    font-size: 16px;
+}
+.search-result{
+    margin:0 4px;
+    font-size: 18px;
+}
+.next{
+    padding-top: 8px 0;
+    margin: 0 0 0 8px;
+    font-size: 16px;
+}
+
+.faiz{
+
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 8px;
+    padding: 8px;
+    transition: padding 1s;
+}
+.faiz:hover{
+    background-color: white;
+    color: black;
+    border: 2px black solid;
+    font-weight: bold;
+    padding: 16px;
+}

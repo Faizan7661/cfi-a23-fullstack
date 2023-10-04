@@ -1,0 +1,66 @@
+javascript can be used to read write and manipulate to the dom
+
+getElementById
+getElementsByClassName
+getElementByTagName
+
+QuerySelector
+
+parentNode
+childNodes
+children
+FirstChild
+firstElementchild
+lastChild
+lastelementchild
+
+
+nextSibling
+
+nectElementSibling
+
+previousSibling
+
+previousElementSibling
+
+createElement
+
+ QuerySelector 
+
+ addeventlistner {
+
+    syntax
+    eg: let selectElement = document.QuerySelector("#main").addeventlistner('click', function name you want to trigger)
+
+    1. target = eg = event.target -> this will give the element which was clicked if clicking is an operation
+                                     more examples are event.target.id , event.target.className, event.target.classList
+
+    2. type = gives type of action performed
+
+    3. offset  X and offsetY gives the mouse position when clicked
+
+    4. altKey , ctrlKey , shiftKey can also be used 
+ }
+
+
+ types of events
+
+ 1. click
+ 2. dblclick = double click
+ 3. mousedown = as soon as we move our mouse in downwards direction mousedown will get triggered
+ 4. mouseup = when we hold nothing happens but when we release mouseup will get triggered
+ 5. mouseenter = when you enter a certain area it will get triggered
+ 6. mouseleave = does the same job as mouseenter but when it leaves the certain area 
+ 7. mouseover = same as mouseenter but it is for inner elements
+ 8. mouseout = same as mouseleave but it is for inner elements;
+ 9. mousemove = whenever we are mmoving cursor in a specified area then it will get triggered
+ 10. keydown = every time we press any key it gets triggered
+ 11. keyup = when the key is released it will get triggered
+ 12. keypress = same as keydown
+ 13. focus = when you click the area you selected it will get triggered
+ 14. blur = if we get out of focous and click anywhere outside the specified area then blur will get triggered
+ 15. cut = when we cut some text it will get triggered
+ 16. paste  = when we paste something that will get triggered
+ 17. input = ot will get triggered when you will do anythinng in the specified area for eg cut copy paste write delete and so on. 
+ 18. change
+ 19. submit

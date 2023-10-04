@@ -1,0 +1,25 @@
+react is a library for building interfaces
+react runns on the client as single page app(SPA) but can be used to building full stack apps by communicating with server/API
+react is a framework
+
+JavaScript Syntax Extention(JSX)
+
+react hooks
+
+reat hooks are functions that lets us hook into react state and lifecycle features from function components 
+
+useState -> returns a stateful value and a function to update it 
+
+useEffect -> performs side effects in  function components
+
+useContext,useReducer,useRef - ye nahi padhainnga unu shayad
+you can also create your own hooks
+
+
+npx create-react-app app-name -> this will create a directory of the project and will install all the necessary things
+
+npm start will start the dev server 
+
+rafce enter -> this will create a skeleton/boiler-plate of the component 
+
+npm i react-icons => this will install a library of icons which is supported by react 
