@@ -25,16 +25,8 @@ let userSchema = new mongoose.Schema({
         type: String
     }],
     address: String,
-    isVerified: {
-        email: {
-            type: Boolean,
-            default: false
-        },
-        phone: {
-            type: Boolean,
-            default: false
-        }
-    },
+    isEmailVerified: Boolean,
+    verificationToken:String
 }, { timestamps: true })
 
 

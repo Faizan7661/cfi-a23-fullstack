@@ -1,38 +1,297 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.registration-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background-image: url(./images/login.jpg);
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: rgb(250, 34, 210);
+}
+
+.RegisterBtn{
+  width: 350px;
+  background-color: rgb(250, 34, 210);
+}
+
+.registration-form {
+  width: 350px; /* Adjust the width as needed */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555; /* Text color for labels */
+  text-align: left;
+  /* font-weight: bolder; */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto; /* Center the button */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+body {
+  font-family: Helvetica;
+  margin: 0;
+
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.site-header { 
+  border-bottom: 1px solid #ccc;
+  padding: .5em 1em;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.site-identity h1 {
+  font-size: 1.5em;
+  margin: .6em 0;
+  display: inline-block;
+}
+
+
+.site-navigation ul, 
+.site-navigation li {
+  margin: 0; 
+  padding: 0;
+}
+
+.site-navigation li {
+  display: inline-block;
+  margin: 1.4em 1em 1em 1em;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.hero-section {
+  height: 100vh;
+  background-image: url(./images/login.jpg);
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+  
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+.hero-content h2{
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007bff; /* Choose your desired button color */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Button color on hover */
+}
+
+.leftcolumn {
+  float: left;
+  width: 100%; 
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Card styles */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.card {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 10px; /* Add margin to all sides */
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 18px;
+    margin: 5px 0;
+  
   }
 }
+.card h2{
+  color: white;
+}
+.card-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* WowLandingPage.css */
+
+.wow-landing-container {
+  text-align: center;
+  background: #f0f0f0;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.wow-site-header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.wow-site-identity a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+.wow-site-navigation {
+  margin-top: 10px;
+}
+
+.wow-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.wow-nav li {
+  display: inline;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.wow-nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.wow-hero-section {
+  margin: 2rem 0;
+}
+
+.wow-hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.wow-hero-content h2 {
+  font-size: 36px;
+  color: #333;
+}
+
+.wow-hero-content p {
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0;
+}
+
+.wow-cta-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.wow-cta-button {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: background 0.3s;
+}
+
+.wow-cta-button:hover {
+  background: #555;
+}
+

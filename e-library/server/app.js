@@ -1,6 +1,7 @@
 import express from "express";
 import userRoutes from './controllers/users/index.js';
 import bookRoutes from './controllers/tasks/index.js'
+import authRoutes from './controllers/users/auth.js'
 import "./dbConnect.js"
 
 const app = express();
@@ -15,6 +16,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/user',userRoutes);
 app.use('/api/admin', bookRoutes);
+app.use('/api/auth',authRoutes);
 
 
 app.listen(port,()=>{

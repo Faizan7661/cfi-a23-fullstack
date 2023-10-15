@@ -1,1 +1,48 @@
-[{"firstName":"Mohammed","lastName":"Faizan","email":"mohammedfaizan7661@gmail.com","password":"$2b$12$mq1QdsWDoHrUvvyPg2jZbuLeAEqWpQcHgWqeemgr5rt91f9cCcxSa","mobileNumber":"7661936118","books":[{"bookName":"a walk in the park","ISBN":"asdfghjkl1234567890","authorName":"Faizan","quantity":1,"borrowers":[]},{"bookName":"harry potter","ISBN":"qwertyuiop0987654321","authorName":"Faizan","quantity":1,"borrowers":[]},{"bookName":"wonder boy","ISBN":"hdhododioduhdoudou878765655","authorName":"Faizan","quantity":1,"borrowers":[]},{"bookName":"wonder car","ISBN":"hdhododiojdidjoudou878765655","authorName":"Faizan","quantity":1,"borrowers":[]},{"bookName":"idwhufuie","ISBN":"hdhododiojdidkdnkkdncjoudou878765655","authorName":"Faizan","quantity":1,"borrowers":[]}],"isEmailVerified":false,"verificationToken":"4wXdwcGPAOPailErh8QF6SlVXfsdp2Wt"}]
+[
+  {
+    "firstName": "Mohammed",
+    "lastName": "Faizan",
+    "email": "mohammedfaizan7661@gmail.com",
+    "password": "$2b$12$mq1QdsWDoHrUvvyPg2jZbuLeAEqWpQcHgWqeemgr5rt91f9cCcxSa",
+    "mobileNumber": "7661936118",
+    "books": [
+      {
+        "bookName": "a walk in the park",
+        "ISBN": "asdfghjkl1234567890",
+        "authorName": "Faizan",
+        "quantity": 1,
+        "borrowers": []
+      },
+      {
+        "bookName": "harry potter",
+        "ISBN": "qwertyuiop0987654321",
+        "authorName": "Faizan",
+        "quantity": 1,
+        "borrowers": []
+      },
+      {
+        "bookName": "wonder boy",
+        "ISBN": "hdhododioduhdoudou878765655",
+        "authorName": "Faizan",
+        "quantity": 1,
+        "borrowers": []
+      },
+      {
+        "bookName": "wonder car",
+        "ISBN": "hdhododiojdidjoudou878765655",
+        "authorName": "Faizan",
+        "quantity": 1,
+        "borrowers": []
+      },
+      {
+        "bookName": "idwhufuie",
+        "ISBN": "hdhododiojdidkdnkkdncjoudou878765655",
+        "authorName": "Faizan",
+        "quantity": 1,
+        "borrowers": []
+      }
+    ],
+    "isEmailVerified": false,
+    "verificationToken": "4wXdwcGPAOPailErh8QF6SlVXfsdp2Wt"
+  }
+]

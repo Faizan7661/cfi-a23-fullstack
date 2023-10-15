@@ -1,6 +1,5 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import fs from "fs/promises";
 import jwt from "jsonwebtoken";
 import {
   userRegisterValidations,
@@ -47,10 +46,7 @@ router.post(
           status: false,
         });
       }
-      // Use fs.readFile() method to read the file
-      // let fileData = await fs.readFile("data.json");
-      // fileData = JSON.parse(fileData);
-      // let findEmail = fileData.find((ele) => ele.email == email);
+
       let findEmail = await userModel.findOne({ email });
       console.log(findEmail);
       if (findEmail) {
@@ -73,16 +69,12 @@ router.post(
         isEmailVerified: false,
         verificationToken,
       };
-   
+
       let userDataPayload = new userModel(userData);
-      // await userDataPayload.save()
-      userDataPayload.save(); //Can be done without await too
+      await userDataPayload.save();
+      // userDataPayload.save(); //Can be done without await too
 
-      // fileData.push(userData);
-      // await sendEmail(email, verificationToken);
-
-      // //fs.writeFile
-      // await fs.writeFile("data.json", JSON.stringify(fileData));
+      await sendEmail(email, verificationToken);
       res
         .status(200)
         .json({ message: "User Signed up Successfully!", status: true });
@@ -103,11 +95,7 @@ router.post(
   async (req, res) => {
     try {
       console.log(req.body);
-      // Use fs.readFile() method to read the file
-      // let fileData = await fs.readFile("data.json");
-      // fileData = JSON.parse(fileData);
-      // let findEmail = fileData.find((ele) => ele.email == req.body.email);
-      let findEmail = await userModel.findOne({email: req.body.email});
+      let findEmail = await userModel.findOne({ email: req.body.email });
       if (!findEmail) {
         return res.status(401).json({ error: "Email Not Found" });
       }
@@ -139,12 +127,9 @@ router.post(
 );
 
 router.get("/verify-email", async (req, res) => {
+  // console.log("inside api/user/verify-email");
   try {
     const { token } = req.query;
-
-    // let fileData = await fs.readFile("data.json");
-    // fileData = JSON.parse(fileData);
-    // const user = fileData.find((ele) => ele.verificationToken === token);
     const user = await userModel.findOne({ verificationToken: token });
 
     if (!user) {
@@ -162,6 +147,22 @@ router.get("/verify-email", async (req, res) => {
     });
   }
 });
+
+router.post("/schedule", async (req, res) => {
+  try {
+    console.log(req.body);
+
+    return res
+      .status(200)
+      .json({ message: "Task Scheduled Successfully!", status: true });
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Internal Server Error", status: false });
+  }
+});
+
 export default router;
 
 // import express from "express";
